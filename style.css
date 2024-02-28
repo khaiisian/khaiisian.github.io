@@ -7,9 +7,9 @@
     width: 1200px;
     height: 3000px;
     max-width: 90vw; /* (max width - 90 percent of screen ratio) */
-    padding: 10px;
     margin: auto;
     font-family: "Roboto Condensed", sans-serif;
+    transition: transform 0.5s;
 }
 .heading{
     height: 50px;
@@ -23,10 +23,10 @@
 .cart_icon{
     /* background-color: black; */
     float: right;
+    position: relative;
 }
 .cart_icon svg{
     width: 40px;
-    position: relative;
 }
 .cart_icon span{
     background-color: whitesmoke;
@@ -66,10 +66,116 @@
     margin-top: 5px;
 }
 .add-to-cart{
+    display: inline-block;
     background-color: rgba(108, 108, 108, 0.971);
     color: white;
     width: 50%;
     padding: 3px 0;
     border-radius: 10px;
     margin: 3px auto 8px;
+    border: none;
+    cursor: pointer;
+}
+.add-to-cart:hover{
+    background-color: white;
+    color: #87e581;;
+}
+
+
+/* Cart */
+#-cart .cart{
+    inset: 0 0 0 auto   ;
+}
+
+#-cart{
+    transform: translateX(-200px);
+}
+.cart{
+    background-color: rgb(20, 20, 20);
+    position: fixed;
+    top: 0;
+    right: -500px;
+    bottom: 0;
+    left: auto;
+    width: 420px;
+    display: grid;
+    grid-template-rows: 50px 1fr 60px;
+    transition: 0.5s;
+}
+
+.cart h1{
+    border-bottom:1px solid white;
+    color: white;
+    padding-top: 3px;
+    margin-bottom: 3px;
+}
+.cart-list{
+    overflow: auto;
+}
+.cart-item{
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    border-bottom: 1px white solid;
+}
+.cart-item:nth-child(even){
+    background-color: rgb(41, 40, 40);
+}
+
+.cart img{
+    width: 100%;
+}
+.item-detail{
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.item-qty{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.item-qty span{
+    width: 25px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border-radius: 25px;
+}
+.item-qty span:nth-child(2){
+    background-color: transparent;
+    color: white;
+}
+
+.remove{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.remove-btn{
+    width: 65px;
+}
+
+
+.cart-btn{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: whitesmoke;
+    padding: 5px;
+    
+}
+.cart-btn button{
+    background-color: #87e581;
+    border: none;
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14px;
 }
