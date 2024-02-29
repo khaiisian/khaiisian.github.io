@@ -59,6 +59,40 @@ item_grid.addEventListener('click', point =>{
     } 
 })
 
+cart_list.addEventListener('click', (point)=>{
+    let clickedPoint = point.target;
+    if(clickedPoint.classList.contains("plus") || clickedPoint.classList.contains("minus")){
+        let cartItemId = clickedPoint.parentElement.parentElement.dataset.id;
+        let sign = 'minus';
+        if(clickedPoint.classList.contains("plus")){
+            sign = 'plus'
+            console.log("plus")
+        }
+        chgQty(cartItemId, sign);
+    }
+})
+
+const chgQty=(cartItemId, sign)=>{
+    let cartItemIndex = cart_items.findIndex(item => item.item_id == cartItemId)
+    if (cartItemIndex>=0){
+        switch(sign){
+            case "plus":
+                cart_items[cartItemIndex].quantity = cart_items[cartItemIndex].quantity+ 1;
+                break;
+            default:
+                let qty = cart_items[cartItemIndex].quantity - 1;
+                if (qty>0){
+                    cart_items[cartItemIndex].quantity = qty
+                }
+                else{
+                    cart_items.splice(cartItemIndex, 1);
+                }
+                break;
+        }
+    }
+    addCartList();
+    constantCartList();
+}
 const add_cart_item = (item_id)  => {
     let cartItemPosition = cart_items.findIndex(value => value.item_id === item_id)
     if(cart_items.length <=0){
@@ -91,6 +125,7 @@ const addCartList = () =>{
         cart_items.forEach(item => {
             let cartDiv = document.createElement('div');
             cartDiv.classList.add('cart-item');
+            cartDiv.dataset.id = item.item_id;
             let item_list_index = items_lst_js.findIndex(value => value.id == item.item_id);
             let item_detail = items_lst_js[item_list_index]
 

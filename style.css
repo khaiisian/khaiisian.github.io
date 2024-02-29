@@ -197,3 +197,9 @@
     font-family: "Roboto Condensed", sans-serif;
     font-size: 14px;
 }
+
+@media screen and (max-width: 400px) {
+    .cart-list{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
