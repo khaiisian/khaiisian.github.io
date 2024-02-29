@@ -77,9 +77,13 @@ const add_cart_item = (item_id)  => {
         cart_items[cartItemPosition].quantity +=1;
     }
     addCartList();
-    // constantCartList();
+    constantCartList();
     // console.log(cart_items)
 }
+const constantCartList = () =>{
+    localStorage.setItem('cart_items', JSON.stringify(cart_items))
+}
+
 
 const addCartList = () =>{
     cart_list.innerHTML = '';
@@ -94,7 +98,7 @@ const addCartList = () =>{
             // console.log(item.item_id)
 
             cartDiv.innerHTML = `
-            <img src="${item_detail.img}" alt="item-1">
+            <img src="${item_detail.img}" alt=>
             <span class="item-detail">${item_detail.name}</span>
             <div class="item-qty">
                 <span class="minus">-</span>
@@ -110,23 +114,22 @@ const addCartList = () =>{
     }
 }
 
-// const constantCartList = () =>{
-//     localStorage.setItem('cart_items', JSON.stringify(cart_items))
-// }
 
 
 
 
 const load_js = ()=>{                  //load_js = funtion() 
+    // localStorage.removeItem('cart_items');
     fetch("items.json")
     .then(response => response.json())   //return response.json
     .then(data =>{
         (items_lst_js = data);
         addItem();
-        // if(localStorage.getItem('cart_items')){
-        //     cart_items = JSON.parse(localStorage.getItem('cart_items'))
-        // }
-        // addCartList();
+        if(localStorage.getItem('cart_items')){
+            cart_items = JSON.parse(localStorage.getItem('cart_items'));
+            addCartList();
+        }
+        
     })
 
 }
