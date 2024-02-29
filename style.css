@@ -3,31 +3,33 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+/* Container */
 .container{
-    width: 1200px;
+    width: 1000px;
     height: 3000px;
     max-width: 90vw; /* (max width - 90 percent of screen ratio) */
     margin: auto;
     font-family: "Roboto Condensed", sans-serif;
-    transition: transform 0.5s;
 }
+
+/* Heading */
 .heading{
     height: 50px;
     padding: 5px;
+    margin-bottom: 10px;    
 }
 .title{
     font-family: "Roboto Condensed", sans-serif;
-    /* display: inline-block; */
     float: left;
+    font-size: 36px;
 }
 .cart_icon{
-    /* background-color: black; */
+    width: 40px;
     float: right;
     position: relative;
+    cursor: pointer;
 }
-.cart_icon svg{
-    width: 40px;
-}
+
 .cart_icon span{
     background-color: whitesmoke;
     display: flex;
@@ -43,23 +45,34 @@
 .clear{
     clear: both;
 }
+
+/* Product List */
 .product_grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    /* padding: 0 10px; */
 }
-.item1{
+.item{
     background-color: #87e581;
     text-align: center;
     border-radius: 30px;
     border: 1px solid rgb(185, 185, 185); 
     font-size: 12px;
+    width: 90%;
+    height: 255px;
+    margin: 10px 15px;
 }
-.item1 img{
+.item img{
     width: 85%;
+    height: 130px;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.619));
+    margin-top: 15px;
 }
-.item1 span svg{
+.add-to-cart  svg{
     width: 15px;
+}
+.item div{
+    margin: 5px 0;
 }
 
 .item-name{
@@ -67,12 +80,11 @@
 }
 .add-to-cart{
     display: inline-block;
+    /* font-family: "Roboto Condensed", sans-serif; */
     background-color: rgba(108, 108, 108, 0.971);
     color: white;
     width: 50%;
-    padding: 3px 0;
     border-radius: 10px;
-    margin: 3px auto 8px;
     border: none;
     cursor: pointer;
 }
@@ -83,13 +95,16 @@
 
 
 /* Cart */
-#-cart .cart{
-    inset: 0 0 0 auto   ;
+.show-cart .cart{
+    inset: 0 0 0 auto  ;
 }
 
-#-cart{
-    transform: translateX(-200px);
+.show-cart .container{
+    transform: translateX(-100px); 
+    transition: transform 0.5s;
 }
+
+
 .cart{
     background-color: rgb(20, 20, 20);
     position: fixed;
@@ -116,6 +131,8 @@
     /* background-color: red; */
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100px;
+    align-items: center;
     border-bottom: 1px white solid;
 }
 .cart-item:nth-child(even){
@@ -124,6 +141,7 @@
 
 .cart img{
     width: 100%;
+    /* height: 100%; */
 }
 .item-detail{
     width: 100%;
