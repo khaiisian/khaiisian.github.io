@@ -4,6 +4,7 @@ let hide_cart = document.querySelector('.cancel');
 let item_grid = document.querySelector('.product_grid');
 let addtocart = document.querySelector('.add-to-cart');
 let cart_list = document.querySelector('.cart-list');
+let Qty = document.querySelector('.amount');
 
 
 // for (let i = 0; i < addtocart.length; i++) {                     (Unable to catch all the btns (may be bcus they are created with js code ?))
@@ -121,6 +122,7 @@ const constantCartList = () =>{
 
 const addCartList = () =>{
     cart_list.innerHTML = '';
+    let totalQty =0;
     if (cart_items.length>0){
         cart_items.forEach(item => {
             let cartDiv = document.createElement('div');
@@ -129,6 +131,7 @@ const addCartList = () =>{
             let item_list_index = items_lst_js.findIndex(value => value.id == item.item_id);
             let item_detail = items_lst_js[item_list_index]
 
+            totalQty = totalQty + item.quantity;
             // console.log("index", item_list_index)
             // console.log(item.item_id)
 
@@ -144,9 +147,14 @@ const addCartList = () =>{
                 <button class="remove-btn">Remove</button>
             </div>`
             cart_list.appendChild(cartDiv)
+
+            //for total item qty in cart
+            Qty.innerText = totalQty;
+            
         })
         
     }
+    
 }
 
 
@@ -164,6 +172,7 @@ const load_js = ()=>{                  //load_js = funtion()
             cart_items = JSON.parse(localStorage.getItem('cart_items'));
             addCartList();
         }
+
         
     })
 

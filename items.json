@@ -36,5 +36,29 @@
         "name":"ITEM 6",
         "price": 400,
         "img": "image/img6.png"
+    },
+    {
+        "id": 7,
+        "name":"ITEM 6",
+        "price": 400,
+        "img": "image/img6.png"
+    },
+    {
+        "id": 8,
+        "name":"ITEM 6",
+        "price": 400,
+        "img": "image/img6.png"
+    },
+    {
+        "id": 9,
+        "name":"ITEM 6",
+        "price": 400,
+        "img": "image/img6.png"
+    },
+    {
+        "id": 10,
+        "name":"ITEM 6",
+        "price": 400,
+        "img": "image/img6.png"
     }
 ]
