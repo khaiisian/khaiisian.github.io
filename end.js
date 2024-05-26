@@ -23,7 +23,7 @@ hide_cart.addEventListener('click', ()=>{
     _body.classList.toggle('show-cart')
 })
 
-
+// Diplaying all items from items.json
 const addItem = () =>{
     item_grid.innerHTML = '';  // make the item that is already in the html empty or refresh
     if (items_lst_js.length>0){

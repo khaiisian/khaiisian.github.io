@@ -4,7 +4,6 @@
         "name": "ITEM 1",
         "price": 200,
         "img": "image/img1.png"
-
     },
     {
         "id": 2,
@@ -14,7 +13,7 @@
     },
     {
         "id": 3,
-        "name":"ITEM 3",
+        "name": "ITEM 3",
         "price": 400,
         "img": "image/img3.png"
     },
@@ -23,7 +22,6 @@
         "name": "ITEM 4",
         "price": 200,
         "img": "image/img4.png"
-
     },
     {
         "id": 5,
@@ -33,32 +31,44 @@
     },
     {
         "id": 6,
-        "name":"ITEM 6",
+        "name": "ITEM 6",
         "price": 400,
         "img": "image/img6.png"
     },
     {
         "id": 7,
-        "name":"ITEM 6",
+        "name": "ITEM 6",
         "price": 400,
         "img": "image/img6.png"
     },
     {
         "id": 8,
-        "name":"ITEM 6",
+        "name": "ITEM 6",
         "price": 400,
         "img": "image/img6.png"
     },
     {
         "id": 9,
-        "name":"ITEM 6",
+        "name": "ITEM 6",
         "price": 400,
         "img": "image/img6.png"
     },
     {
         "id": 10,
-        "name":"ITEM 6",
+        "name": "ITEM 6",
         "price": 400,
         "img": "image/img6.png"
+    },
+    {
+        "id": 11,
+        "name": "ITEM 1",
+        "price": 200,
+        "img": "image/img1.png"
+    },
+    {
+        "id": 12,
+        "name": "ITEM 1",
+        "price": 200,
+        "img": "image/img1.png"
     }
 ]
